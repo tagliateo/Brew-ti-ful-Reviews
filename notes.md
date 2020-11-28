@@ -1,4 +1,4 @@
-***Coffee Review App***
+#Coffee Review App
 
 ***User***
 - has_many :reviews
