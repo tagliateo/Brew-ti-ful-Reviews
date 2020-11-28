@@ -1,6 +1,6 @@
-Coffee Review App
+***Coffee Review App***
 
-User
+***User***
 - has_many :reviews
 - has_many :coffees, through: reviews
 - name
@@ -8,7 +8,7 @@ User
 - password_digest
 - profile pic
 
-Review
+***Review***
 - belongs_to :user
 - belongs_to :coffee
 - title
@@ -16,7 +16,7 @@ Review
 - description
 
 
-Coffee
+***Coffee***
 - has_many :reviews
 - has_many :users, through: :reviews
 <!-- - belongs_to :category -->
@@ -26,7 +26,7 @@ Coffee
 - description
 - roast_type
 
-###Basic Features###
+***Basic Features***
 A user can signup, login with a username or through Google or Facebook
 A user can create, read, update and delete a review for a coffee
 A user can add, and edit a coffee
