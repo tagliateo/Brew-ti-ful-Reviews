@@ -26,6 +26,12 @@ Coffee
 - description
 - roast_type
 
+###Basic Features
+A user can signup, login with a username or through Google or Facebook
+A user can create, read, update and delete a review for a coffee
+A user can add, and edit a coffee
+A user can see reviews from other users for a coffee
+
 
 ***Stretch Goals
 Category
