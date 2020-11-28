@@ -32,14 +32,12 @@
 - A user can add, and edit a coffee
 - A user can see reviews from other users for a coffee
 
-
-***Stretch Goals:
-Category***
+***Stretch Goals***
+Category
 - has many users through reviews
 - name
 
-<!--
 Comment
 - belongs_to :user
 - belongs_to :coffee
-- text -->
+- text
