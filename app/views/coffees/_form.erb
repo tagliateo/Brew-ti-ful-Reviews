@@ -1,0 +1,19 @@
+<%= form_with model: @coffee do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <br>
+  <br>
+  <%= form.label :roaster %>
+  <%= form.text_field :roaster %>
+  <br>
+  <br>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+  <br>
+  <br>
+  <%= form.label :roast_type %>
+  <%= form.text_field :roast_type %>
+  <br>
+  <br>
+  <%= form.submit "Save Coffee" %>
+<% end %>
