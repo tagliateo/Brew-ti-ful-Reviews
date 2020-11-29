@@ -12,11 +12,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
-    @review.user = current_user
-    @treat.save
-
-    redirect_to reviews_path
+    @review = current_user.reviews.build(review_params)
+    if @review.save
+      redirect_to reviews_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -39,10 +40,15 @@ class ReviewsController < ApplicationController
 
   def find_review
     @review = Review.find_by_id(params[:id])
+    redirect_to reviews_path if !@review
   end
 
   def review_params
     params.require(:review).permit(:title, :rating, :description, :coffee_id)
+  end
+
+  def redirect_if_not_logged_in
+    redirect_to new_session_path if !current_user
   end
 
 end
