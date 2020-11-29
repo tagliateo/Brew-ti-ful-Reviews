@@ -1,0 +1,4 @@
+<%= @reviews.each do |r| %>
+  <p><b><%= link_to r.name, review_path(path) %></b></p>
+  <p>Rated: <%= r.rating %></p>
+<% end %>
