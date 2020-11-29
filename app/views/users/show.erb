@@ -1,6 +1,6 @@
 <h1><%= @user.name %></h1>
 
-<p><%= @user.profile_img %></p>
+<p><%= image_tag @user.profile_img, class: "usr-img" %></p>
 
 <%= @reviews.each do |r| %>
   <%= r.coffee.title %>
