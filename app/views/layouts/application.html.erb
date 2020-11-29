@@ -10,6 +10,13 @@
   </head>
 
   <body>
+
+    <% if current_user %>
+      <p>Welcome <%= current_user.name %></p
+      <%= button_to "Profile", user_path(current_user), method: :get %>
+      <%= button_to "Logout", session_path(1), method: :delete %>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>

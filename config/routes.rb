@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'users#new'
 
+  # Login
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  # logout
+  delete '/logout', to: 'sessions#destroy'
+
   resources :coffees
   resources :users, only: [:new, :create, :show]
   resources :reviews
