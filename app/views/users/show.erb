@@ -1,0 +1,10 @@
+<h1><%= @user.name %></h1>
+
+<p><%= @user.profile_img %></p>
+
+<%= @reviews.each do |r| %>
+  <%= r.coffee.title %>
+  <%= link_to r.title, review_path(r.id) %>
+  <p>Rating: <%= r.rating %></p>
+  <p><%= r.description %></p>
+<% end %>

@@ -5,19 +5,19 @@
 <%= form_with model: @user do |form| %>
 
   <%= form.label :name %>
-  <%= form.text_field :name %>
+  <%= form.text_field :name, required:true %>
   <br>
   <br>
   <%= form.label :email %>
-  <%= form.email_field :email %>
+  <%= form.email_field :email, required:true%>
   <br>
   <br>
   <%= form.label :password %>
-  <%= form.password_field :password %>
+  <%= form.password_field :password, required:true%>
   <br>
   <br>
   <%= form.label :profile_img %>
-  <%= form.text_field :profile_img %>
+  <%= form.text_field :profile_img, required:true %>
   <br>
   <br>
   <%= form.submit "Submit" %>
