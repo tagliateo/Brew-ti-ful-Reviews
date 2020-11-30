@@ -2,13 +2,13 @@ class CoffeesController < ApplicationController
   include SessionsHelper
 
   before_action :find_coffee, only: [:show, :edit, :update]
-  
+
   def new
     @coffee = Coffee.new
   end
 
   def create
-    @coffee = Coffee.new(coffee_params)
+    @coffee = current_user.coffees.build(coffee_params)
     if @coffee.save
       redirect_to coffee_path(@coffee)
     else
@@ -16,7 +16,19 @@ class CoffeesController < ApplicationController
     end
   end
 
+  def index
+    @coffees = Coffee.all.alphabetical
+  end
+
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    @coffee.update(coffee_params)
+    redirect_to coffee_path(@coffee)
   end
   private
 
