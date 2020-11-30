@@ -30,6 +30,7 @@ class CoffeesController < ApplicationController
     @coffee.update(coffee_params)
     redirect_to coffee_path(@coffee)
   end
+  
   private
 
   def find_coffee

@@ -2,5 +2,7 @@
 
 <!-- - Finish Sessions Controller (Login/Logout) -->
 <!-- - CRUD for Reviews -->
-- CRUD for Coffee
+<!-- - CRUD for Coffee -->
 - Styling  
+
+- Fix Show for Reviews && Coffees 
