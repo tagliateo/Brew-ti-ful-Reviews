@@ -4,17 +4,29 @@ class ReviewsController < ApplicationController
   before_action :find_review, only: [:show, :edit, :update, :destroy]
 
   def index
-    @reviews = Review.all
+    if @coffee = Coffee.find_by_id(params[:coffee_id])
+      @reviews = @cofee.reviews
+    else
+      @reviews = Review.all.order_by_rating
+    end
   end
 
   def new
-    @review = Review.new
+    if logged_in?
+      if @coffee = Coffee.find_by_id(params[:coffee_id])
+          @review = @coffee.reviews.build
+      else
+        @review = Review.new
+      end
+    else
+      render :new
+    end
   end
 
   def create
     @review = current_user.reviews.build(review_params)
     if @review.save
-      redirect_to reviews_path
+      redirect_to reviews_path(@review)
     else
       render :new
     end
@@ -27,8 +39,11 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review.update(review_params)
-    redirect_to review_path(@review)
+    if @review.update(review_params)
+      redirect_to review_path(@review)
+    else
+      render :edit
+    end
   end
 
   def destroy
