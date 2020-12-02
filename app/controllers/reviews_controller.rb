@@ -3,13 +3,6 @@ class ReviewsController < ApplicationController
 
   before_action :find_review, only: [:show, :edit, :update, :destroy]
 
-  def index
-    if @coffee = Coffee.find_by_id(params[:coffee_id])
-      @reviews = @cofee.reviews
-    else
-      @reviews = Review.all.order_by_rating
-    end
-  end
 
   def new
     if logged_in?
@@ -29,6 +22,14 @@ class ReviewsController < ApplicationController
       redirect_to reviews_path(@review)
     else
       render :new
+    end
+  end
+
+  def index
+    if @coffee = Coffee.find_by_id(params[:coffee_id])
+      @reviews = @cofee.reviews
+    else
+      @reviews = Review.all.order(created_at: :asc)
     end
   end
 

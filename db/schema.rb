@@ -17,22 +17,19 @@ ActiveRecord::Schema.define(version: 2020_11_28_222647) do
     t.string "roaster"
     t.text "description"
     t.string "roast_type"
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_coffees_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.integer "rating"
     t.text "description"
-    t.integer "user_id", null: false
-    t.integer "coffee_id", null: false
+    t.integer "coffee_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["coffee_id"], name: "index_reviews_on_coffee_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,7 +41,4 @@ ActiveRecord::Schema.define(version: 2020_11_28_222647) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "coffees", "users"
-  add_foreign_key "reviews", "coffees"
-  add_foreign_key "reviews", "users"
 end

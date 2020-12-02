@@ -4,8 +4,9 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.string :title
       t.integer :rating
       t.text :description
-      t.references :user, null: false, foreign_key: true
-      t.references :coffee, null: false, foreign_key: true
+      t.integer :coffee_id
+      t.integer :user_id
+
 
       t.timestamps
     end

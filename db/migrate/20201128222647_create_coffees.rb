@@ -5,7 +5,7 @@ class CreateCoffees < ActiveRecord::Migration[6.0]
       t.string :roaster
       t.text :description
       t.string :roast_type
-      t.references :user, null: false, foreign_key: true
+      t.integer :user_id
 
       t.timestamps
     end

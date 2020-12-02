@@ -8,8 +8,10 @@ class CoffeesController < ApplicationController
   end
 
   def create
-    @coffee = current_user.coffees.build(coffee_params)
+    # byebug
+    @coffee = Coffee.new(coffee_params)
     if @coffee.save
+
       redirect_to coffee_path(@coffee)
     else
       render :new
@@ -17,7 +19,7 @@ class CoffeesController < ApplicationController
   end
 
   def index
-    @coffees = Coffee.all.alphabetical
+    @coffees = Coffee.all
   end
 
   def show
@@ -30,7 +32,7 @@ class CoffeesController < ApplicationController
     @coffee.update(coffee_params)
     redirect_to coffee_path(@coffee)
   end
-  
+
   private
 
   def find_coffee

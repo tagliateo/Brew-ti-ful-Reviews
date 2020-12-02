@@ -2,9 +2,12 @@
 
 <p><%= image_tag @user.profile_img, class: "usr-img" %></p>
 
-<%= @reviews.each do |r| %>
+<% @review.each do |r| %>
   <%= r.coffee.title %>
+  <br>
+  <br>
   <%= link_to r.title, review_path(r.id) %>
   <p>Rating: <%= r.rating %></p>
+  <br>
   <p><%= r.description %></p>
 <% end %>
