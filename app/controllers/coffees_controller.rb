@@ -40,6 +40,6 @@ class CoffeesController < ApplicationController
   end
 
   def coffee_params
-    params.require(:coffee).permit(:title, :roaster, :description, :roast_type)
+    params.require(:coffee).permit(:title, :brand, :description, :roast_level, :caffeine_content)
   end
 end

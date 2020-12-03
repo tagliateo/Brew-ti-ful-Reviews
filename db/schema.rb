@@ -14,9 +14,10 @@ ActiveRecord::Schema.define(version: 2020_11_28_222647) do
 
   create_table "coffees", force: :cascade do |t|
     t.string "title"
-    t.string "roaster"
+    t.string "brand"
     t.text "description"
-    t.string "roast_type"
+    t.string "roast_level"
+    t.string "caffeine_content"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
