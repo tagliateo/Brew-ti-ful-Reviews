@@ -9,5 +9,6 @@
   <%= link_to r.title, review_path(r.id) %>
   <p>Rating: <%= r.rating %></p>
   <p><%= r.description %></p>
+  <p>Posted At: <%= r.updated_at %></p>
 </ol>
 <% end %>
