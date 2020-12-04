@@ -19,13 +19,7 @@ class CoffeesController < ApplicationController
   end
 
   def index
-    if @review = Review.find_by_id(params[:review_id])
-      @
-    elsif true
-      # code
-    else
-      @coffees = Coffee.all
-    end
+    @coffees = Coffee.all
   end
 
   def show
