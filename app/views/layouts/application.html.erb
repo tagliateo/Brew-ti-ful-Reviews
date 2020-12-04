@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%= render partial: 'layouts/navbar' %>
 
     <% if current_user %>
       <p>Welcome <%= current_user.name %></p

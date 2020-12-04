@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
 
   def index
     if @coffee = Coffee.find_by_id(params[:coffee_id])
-      @reviews = @cofee.reviews
+      @reviews = @coffee.reviews
     else
       @reviews = Review.all.order(created_at: :asc)
     end

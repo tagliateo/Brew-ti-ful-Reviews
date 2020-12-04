@@ -1,6 +1,11 @@
-<%= @coffees.each do |c| %>
-  <%= c.title %>
-  <%= c.roaster %>
-  <%= c.roast_type %>
-  <%= c.description %>
+<h1>Look At All That Coffee!</h1>
+
+<%= @coffees.each do |coffee| %>
+  <p><%= coffee.title %></p>
+  <p><%= coffee.brand %></p>
+  <p><%= coffee.roast_level %></p>
+  <p><%=  coffee.description %></p>
+  <p><%= coffee.caffeine_content %></p>
+
+  <p><%= link_to 'See Reviews For This Coffee', coffee_review_path(coffee) %></p>
 <% end %>
