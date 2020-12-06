@@ -1,4 +1,10 @@
 <%= form_with model: @review do |form| %>
+  <% if params[:coffee_id] %>
+      <%= form.hidden_field :coffee_id %>
+    <% else %>
+       <%= form.collection_select(:coffee_id, Coffee.all, :id, :title,
+        { prompt: "Select A Coffee to Review"}) %>
+   <% end %><br>
   <%= form.label :title %>
   <%= form.text_field :title %>
   <br>
