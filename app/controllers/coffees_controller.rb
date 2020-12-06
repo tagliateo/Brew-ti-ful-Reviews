@@ -3,23 +3,27 @@ class CoffeesController < ApplicationController
 
   before_action :find_coffee, only: [:show, :edit, :update]
 
+  def index
+    @coffees = Coffee.all
+  end
+
   def new
-    @coffee = Coffee.new
+    if logged_in?
+      @coffee = Coffee.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
     # byebug
-    @coffee = Coffee.new(coffee_params)
+    @coffee = current_user.coffees.build(coffee_params)
     if @coffee.save
 
-      redirect_to coffee_path(@coffee)
+      redirect_to coffees_path(@coffee)
     else
       render :new
     end
-  end
-
-  def index
-    @coffees = Coffee.all
   end
 
   def show
@@ -40,6 +44,6 @@ class CoffeesController < ApplicationController
   end
 
   def coffee_params
-    params.require(:coffee).permit(:title, :brand, :description, :roast_level, :caffeine_content)
+    params.require(:coffee).permit(:title, :brand, :description, :roast_level, :caffeine_content, :user_id)
   end
 end
