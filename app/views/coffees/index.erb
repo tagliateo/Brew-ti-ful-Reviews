@@ -1,9 +1,10 @@
 <h1>Look At All That Coffee!</h1>
 
 <%= @coffees.each do |coffee| %>
-  <p><%= coffee.title %></p>
-  <p><%= coffee.brand %></p>
-  <p><%= coffee.roast_level %></p>
-  <p><%=  coffee.description %></p>
-  <p><%= coffee.caffeine_content %></p>
+  <p><b>Coffee: </b><%= coffee.title %></p>
+  <p><b>Brand: </b><%= coffee.brand %></p>
+  <p><b> Roast Level: </b><%= coffee.roast_level %></p>
+  <p><b>Description: </b>:<%=  coffee.description %></p>
+  <p><b>Caffeine Content: </b> <%= coffee.caffeine_content %></p>
+  <br>
 <% end %>
