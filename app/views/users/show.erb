@@ -3,12 +3,10 @@
 <p><%= image_tag @user.profile_img, class: "usr-img" %></p>
 
 <% @review.each do |r| %>
-<ol>
-  <li><%= link_to r.coffee.title, user_coffee_path(r.id) %></li>
+  <%= link_to r.coffee.title, user_coffee_path(r.id) %>
   <br>
   <%= link_to r.title, review_path(r.id) %>
   <p>Rating: <%= r.rating %></p>
   <p><%= r.description %></p>
   <p>Posted At: <%= r.updated_at %></p>
-</ol>
 <% end %>
