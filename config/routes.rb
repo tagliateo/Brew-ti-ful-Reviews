@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # logout
   delete '/logout', to: 'sessions#destroy'
 
+  get '/auth/google_oauth2/callback', to: "sessions#google_login"
+
   resources :coffees do
     resources :reviews, only: [:new, :index, :show]
   end

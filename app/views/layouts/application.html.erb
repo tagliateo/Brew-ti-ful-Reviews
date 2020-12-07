@@ -12,6 +12,8 @@
   <body>
     <%= render partial: 'layouts/navbar' %>
 
+    <%= link_to "Sign Up With Google", '/auth/google_oauth2' %>
+    
     <% if current_user %>
       <p>Welcome <%= current_user.name %></p
       <%= button_to "Profile", user_path(current_user), method: :get %>

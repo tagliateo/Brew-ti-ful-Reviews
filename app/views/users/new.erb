@@ -1,21 +1,24 @@
 <h1>Sign Up To Start Reviewing Delicious Coffee</h1>
 
-<%= form_with model: @user do |form| %>
-
+<%= form_with model: @user, local: true do |form| %>
+  <% if @user.errors.any? %>
+   <p>There were errors:</p>
+   <p><%= @user.errors.full_messages.join(" | ") %></p>
+  <% end %>
   <%= form.label :name %>
-  <%= form.text_field :name, required:true %>
+  <%= form.text_field :name %>
   <br>
   <br>
   <%= form.label :email %>
-  <%= form.email_field :email, required:true%>
+  <%= form.email_field :email %>
   <br>
   <br>
   <%= form.label :password %>
-  <%= form.password_field :password, required:true%>
+  <%= form.password_field :password %>
   <br>
   <br>
   <%= form.label :profile_img %>
-  <%= form.text_field :profile_img, required:true %>
+  <%= form.text_field :profile_img %>
   <br>
   <br>
   <%= form.submit "Submit" %>
