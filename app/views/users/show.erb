@@ -1,14 +1,13 @@
 <h1><%= @user.name %>'s Profile Page</h1>
 
   <% if @user.profile_img %>
-    <p><%= image_tag @user.profile_img, class: "usr-img" %></p>
+    <p><%= image_tag @user.profile_img, class: "back-img" %></p>
   <% end %>
 
 <% @review.each do |r| %>
-  <%= link_to r.coffee.title, user_coffee_path(r.id) %>
-  <br>
-  <%= link_to r.title, review_path(r.id) %>
+  <p>Review Title:<%= link_to r.title, review_path(r.id) %></p>
   <p>Rating: <%= r.rating %></p>
   <p><%= r.description %></p>
+  <p>Coffee Reviewed: <%= link_to r.coffee.title, user_coffee_path(r.id) %></p>
   <p>Posted At: <%= r.updated_at %></p>
 <% end %>
