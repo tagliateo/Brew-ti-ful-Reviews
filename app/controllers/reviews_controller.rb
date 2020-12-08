@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   include SessionsHelper
 
   before_action :find_review, only: [:show, :edit, :update, :destroy]
+  before_action :review_author, only: [:edit, :update, :destroy]
 
 
   def new
@@ -12,7 +13,7 @@ class ReviewsController < ApplicationController
         @review = Review.new
       end
     else
-      render :new
+      redirect_if_not_logged_in
     end
   end
 
@@ -61,6 +62,13 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:title, :rating, :description, :coffee_id)
+  end
+
+  def review_author
+    if @review.user != current_user
+      flash[:error] = "You Can Only Edit Your Own Reviews!"
+      redirect_to reviews_path
+    end
   end
 
   def redirect_if_not_logged_in
