@@ -1,3 +1,5 @@
 <h1>Edit Coffee</h1>
 
 <%= render partial: 'form' %>
+
+<%= button_to 'Delete Review', review_path(@review), method: :delete, class: "btn btn-primary" %>

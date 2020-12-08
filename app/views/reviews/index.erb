@@ -4,7 +4,8 @@
 <br>
 <% @reviews.each do |review| %>
   <p><b><%= link_to review.title, review_path(review) %></b></p>
-  <p> Coffee Reviewed: <%= review.coffee.title %></p>
-  <p>Rated: <%= review.rating %></p>
-  <p>Review: <%= review.description %></p>
+  <p><b> Coffee Reviewed: </b><%= review.coffee.title %></p>
+  <p><b>Rated: </b><%= review.rating %></p>
+  <p><b>Review:</b> <%= review.description %></p>
+  <p><b>Reviewed By:</b> <%= review.user.name %></p>
 <% end %>

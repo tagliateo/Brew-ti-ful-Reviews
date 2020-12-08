@@ -1,9 +1,11 @@
 <h1>Look At All That Coffee!</h1>
-
+<p><%= link_to 'Add Another Coffee', new_coffee_path %></p>
 <% @coffees.each do |coffee| %>
-  <p><b>Coffee: </b><%= coffee.title %></p>
+<p><b>Coffee: </b><%= coffee.title %></p>
   <p><b>Brand: </b><%= coffee.brand %></p>
   <p><b> Roast Level: </b><%= coffee.roast_level %></p>
   <p><b>Description: </b><%=  coffee.description %></p>
   <p><b>Caffeine Content: </b> <%= coffee.caffeine_content %></p>
+  <p><b>Posted By:</b> <%= coffee.user.name %></p>
+  <br>
 <% end %>
