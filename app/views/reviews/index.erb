@@ -2,8 +2,9 @@
 
 <p><%= link_to 'Write A New Review', new_review_path %></p>
 <br>
-<%= @reviews.each do |review| %>
-  <%# <%= review.coffee.title %>
+<% @reviews.each do |review| %>
   <p><b><%= link_to review.title, review_path(review) %></b></p>
+  <p> Coffee Reviewed: <%= review.coffee.title %></p>
   <p>Rated: <%= review.rating %></p>
+  <p>Review: <%= review.description %></p>
 <% end %>

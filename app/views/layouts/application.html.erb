@@ -12,7 +12,7 @@
   <body>
     <%= render partial: 'layouts/navbar' %>
 
-
+    <%= button_to "Logout", logout_path, method: :delete %>
     <%= yield %>
   </body>
 </html>
