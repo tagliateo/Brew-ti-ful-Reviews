@@ -1,22 +1,22 @@
 <%= form_with model: @coffee do |form| %>
   <%= form.label :title %>
-  <%= form.text_field :title %>
+  <%= form.text_field :title,{ placeholder: "Italian"} %>
   <br>
   <br>
   <%= form.label :brand %>
-  <%= form.text_field :brand %>
+  <%= form.text_field :brand, { placeholder: "Seattle's Mermaid"} %>
   <br>
   <br>
   <%= form.label :description %>
-  <%= form.text_field :description %>
+  <%= form.text_field :description, { placeholder: "Light and Toasty"} %>
   <br>
   <br>
   <%= form.label :roast_level %>
-  <%= form.text_field :roast_level %>
+  <%= form.text_field :roast_level, { placeholder: "Dark"} %>
   <br>
   <br>
   <%= form.label :caffeine_content %>
-  <%= form.text_field :caffeine_content %>
+  <%= form.text_field :caffeine_content, { placeholder: "High"} %>
   <br>
   <%= form.submit "Save Coffee" %>
 <% end %>
