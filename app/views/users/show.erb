@@ -9,5 +9,5 @@
   <p>Rating: <%= r.rating %></p>
   <p><%= r.description %></p>
   <p>Coffee Reviewed: <%= link_to r.coffee.title, user_coffee_path(r.id) %></p>
-  <p>Posted At: <%= r.updated_at %></p>
+  <p>Posted At: <%= r.updated_at.localtime.strftime("%I:%M %p on %m/%d/%Y") %></p>
 <% end %>

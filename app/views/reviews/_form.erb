@@ -1,3 +1,5 @@
+<%= render partial: 'layouts/errors', locals: {object: @review}  %>
+
 <%= form_with model: @review do |form| %>
   <% if params[:coffee_id] %>
       <%= form.hidden_field :coffee_id %>
@@ -6,16 +8,13 @@
         { prompt: "Select A Coffee to Review"}) %>
    <% end %><br>
   <%= form.label :title %>
-  <%= form.text_field :title %>
-  <br>
+  <%= form.text_field :title, class: "form-control" %>
   <br>
   <%= form.label :rating %>
-  <%= form.number_field :rating, min: 0, max: 10 %>
-  <br>
+  <%= form.number_field :rating, min: 0, max: 10, class: "form-control" %>
   <br>
   <%= form.label :description %>
-  <%= form.text_field :description %>
+  <%= form.text_field :description, class: "form-control" %>
   <br>
-  <br>
-  <%= form.submit "Save Review" %>
+  <%= form.submit "Save Review", class: "btn btn-primary" %>
 <% end %>

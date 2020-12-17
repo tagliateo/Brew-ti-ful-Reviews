@@ -5,8 +5,9 @@ class Coffee < ApplicationRecord
   has_many :users, through: :reviews
 
   validates :title, :brand, :roast_level, :description, :caffeine_content, presence: true
+  validates :roast_level, inclusion: { in: %w(light medium dark), message: "%{value} is not a valid roast level" }
+  validates :caffeine_content, inclusion: { in: %w(low medium high ), message: "%{value} is not a valid roast level" }
   validates :title, uniqueness: { message: "has already been added.", case_sensitive: false }
 
   scope :alphabetical, -> { order('name ASC') }
-  # accepts_nested_attributes_for :review
 end

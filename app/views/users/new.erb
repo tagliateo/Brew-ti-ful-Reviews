@@ -1,25 +1,21 @@
 <h1>Sign Up To Start Reviewing Delicious Coffee</h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @user}  %>
+
 <%= form_with model: @user, local: true do |form| %>
-  <% if @user.errors.any? %>
-   <p>There were errors:</p>
-   <p><%= @user.errors.full_messages.join(" | ") %></p>
-  <% end %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <br>
-  <br>
-  <%= form.label :email %>
-  <%= form.email_field :email %>
-  <br>
-  <br>
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-  <br>
-  <br>
-  <%= form.label :profile_img %>
-  <%= form.text_field :profile_img %>
-  <br>
-  <br>
-  <%= form.submit "Submit" %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+    <br>
+    <%= form.label :email %>
+    <%= form.email_field :email, class: "form-control" %>
+    <br>
+    <%= form.label :password %>
+    <%= form.password_field :password, class: "form-control" %>
+    <br>
+    <%= form.label :profile_img %>
+    <%= form.text_field :profile_img, class: "form-control" %>
+    <br>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
 <% end %>
