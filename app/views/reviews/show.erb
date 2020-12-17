@@ -4,6 +4,6 @@
 <br>
 <p>Your Review: <%= @review.description %></p>
 
-<%= button_to "Edit", edit_review_path(@review), method: :get %>
+<%= button_to "Edit", edit_review_path(@review), class: "btn btn-primary", method: :get %>
 <br>
-<%= button_to "Delete", review_path(@review), method: :delete, data: { confirm: "Are you sure? You'll lose #{@review.title} forever!" } %>
+<%= button_to "Delete", review_path(@review), method: :delete, data: { confirm: "Are you sure? You'll lose #{@review.title} forever!"}, class: "btn btn-danger"  %>
