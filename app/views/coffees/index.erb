@@ -1,5 +1,7 @@
 <h1>Look At All That Coffee!</h1>
+<br>
 <p><%= link_to 'Add Another Coffee', new_coffee_path %></p>
+<br>
 <% @coffees.each do |coffee| %>
 <p><b>Coffee: </b><%= coffee.title %></p>
   <p><b>Brand: </b><%= coffee.brand %></p>
