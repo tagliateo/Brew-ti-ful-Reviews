@@ -10,4 +10,8 @@ class Coffee < ApplicationRecord
   validates :title, uniqueness: { message: "has already been added.", case_sensitive: false }
 
   scope :alphabetical, -> { order('name ASC') }
+
+  def self.sorted_coffees
+    @coffee = Coffee.all.sort{ |coffee| coffee.reviews.length }
+  end
 end

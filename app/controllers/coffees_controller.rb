@@ -4,7 +4,8 @@ class CoffeesController < ApplicationController
   before_action :find_coffee, only: [:show, :edit, :update]
 
   def index
-    @coffees = Coffee.all
+    @coffees = Coffee.sorted_coffees
+    # @coffees = Coffees.all
   end
 
   def new
