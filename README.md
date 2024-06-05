@@ -1,8 +1,8 @@
 # README
 
-Brew-Ti-Ful Reviews is an app built with Rails that allows users to add coffees they have tasted or have yet to taste to the DB. Users can browse the index of coffees they or other's have added and leave reviews for the coffees they have tasted. Options for logging in or signing up with a username and password are available, but a user can choose to log in or signup through Google thanks to Omniauth. Users can browse reviews of other users for a particular coffee, but can only edit their own reviews.
-
 [![App Demo](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2Fh7xeUmVayyA)](https://youtu.be/h7xeUmVayyA)
+
+Brew-Ti-Ful Reviews is an app built with Rails that allows users to add coffees they have tasted or have yet to taste to the DB. Users can browse the index of coffees they or other's have added and leave reviews for the coffees they have tasted. Options for logging in or signing up with a username and password are available, but a user can choose to log in or signup through Google thanks to Omniauth. Users can browse reviews of other users for a particular coffee, but can only edit their own reviews.
 
 ## Getting Started
 
