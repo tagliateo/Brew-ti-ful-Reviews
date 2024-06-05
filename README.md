@@ -6,7 +6,7 @@ Brew-Ti-Ful Reviews is an app built with Rails that allows users to add coffees 
 
 ## Getting Started
 
-To get started simply fork and clone this repo, cd into the directory and run `bundle install`. Running `rake db:migrate` will Migrate the DB, and running `rails server` and opening your browser to localhost:3000 will let you signup for an account and start saving some coffee to your profile.
+To get started simply fork and clone this repo, cd into the directory and run `bundle install`. Running `rake db:migrate` will Migrate the DB, and running `rails server` and opening your browser to localhost:3000 will let you signup for an account and start saving some coffee to your profile. Needs Ruby version-2.6.1 to work.
 
 ## Contributing
 
